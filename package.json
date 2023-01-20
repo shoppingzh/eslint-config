@@ -1,0 +1,23 @@
+{
+  "name": "@shoppingzh/eslint-config",
+  "version": "1.0.0",
+  "description": "eslint config",
+  "main": "index.js",
+  "files": [
+    "./index.js"
+  ],
+  "repository": "git@github.com:shoppingzh/eslint-config.git",
+  "author": "shoppingzh <xpzheng6@163.com>",
+  "license": "MIT",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.4.2",
+    "@commitlint/config-conventional": "^17.4.2",
+    "husky": "^8.0.0"
+  },
+  "scripts": {
+    "prepare": "husky install"
+  }
+}

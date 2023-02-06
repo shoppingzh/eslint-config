@@ -130,4 +130,4 @@ module.exports = {
     'capitalized-comments': [0], // 注释是否首字母大写
     'class-methods-use-this': [0],
   },
-};
+}

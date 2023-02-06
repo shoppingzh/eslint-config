@@ -31,6 +31,33 @@ module.exports = {
     'no-invalid-regexp': [2], // 不要在正则表达式中出现无效的字符串
     'no-irregular-whitespace': [2], // 不要使用非常规的空格如零宽字符
     'no-loss-of-precision': [2], // 不要出现过大的数值字面量
+    'no-misleading-character-class': [2], // 正则表达式禁止多码点匹配
+    'no-new-native-nonconstructor': [2], // 禁止类似new Symbol()类调用
+    'no-new-symbol': [2], // 禁止 new Symbol()
+    'no-obj-calls': [2], // 禁止 new Math()等调用方式
+    'no-promise-executor-return': [2], // 禁止在Promise执行函数中直接return，而是使用resolve或reject
+    'no-prototype-builtins': [0], // 禁止调用对象在Object.prototype中的方法，必须使用Object.prototype.toString.call(o)的方式调用
+    'no-self-assign': [0], // 禁止进行自身赋值
+    'no-self-compare': [0], // 禁止自身比较
+    'no-setter-return': [2], // 禁止在setter函数中return
+    'no-sparse-arrays': [2], // 禁止使用稀疏数组
+    'no-template-curly-in-string': [1], // 禁止在普通字符串中出现 ${} 语法
+    'no-this-before-super': [2], // 不允许在super()前使用this关键字
+    'no-undef': [1], // 禁止使用未声明的变量或函数
+    'no-unexpected-multiline': [1], // 禁止出现意外的多行（强制要求加分号）
+    'no-unmodified-loop-condition': [0], // 禁止在循环中修改被循环的变量
+    'no-unreachable': [2], // 禁止不可达的语句
+    'no-unreachable-loop': [2], // 禁止在循环中出现不可达语句
+    'no-unsafe-finally': [2], // 禁止在finally块中出现return/throw/break/continue语句
+    'no-unsafe-negation': [2], // 禁止出现 if (!key in obj) 这类语句
+    'no-unsafe-optional-chaining': [0], // 禁止出现不安全的可选链操作
+    'no-unused-private-class-members': [1],
+    'no-unused-vars': [1], // 禁止出现未使用的变量
+    'no-use-before-define': [2], // 禁止在声明前使用变量
+    'no-useless-backreference': [2], // 禁止正则表达式中出现无用的反引
+    'require-atomic-updates': [0], // 防止出现非原子化的更新
+    'use-isnan': [2], // 必须使用isNaN来判断变量是否为NaN
+    'valid-typeof': [2], // 确保typeof的结果与undefined/string/number/boolean/bigint/symbol/object/function比较
 
     // Format
     'array-bracket-newline': [2, 'consistent'], // 数组括号换行
@@ -79,7 +106,7 @@ module.exports = {
     'padded-blocks': [2, { classes: 'always' }], // 区块间是否有空行
     'quotes': [2, 'single'], // 字符串是单引号还是双引号
     'rest-spread-spacing': [2, 'never'], // 剩余参数...后面是否需要空格
-    'semi': [2, 'always'], // 语句末是否需要分号
+    'semi': [2, 'never'], // 语句末是否需要分号
     'semi-spacing': [2, { before: false, after: false }], // 分号前后的空格
     'semi-style': [2, 'last'], // 分号风格，是在句末还是新行的行首
     'space-before-blocks': [2, 'always'], // 区块的{前是否需要空格

@@ -53,7 +53,7 @@ module.exports = {
     'no-unsafe-optional-chaining': [0], // 禁止出现不安全的可选链操作
     'no-unused-private-class-members': [1],
     'no-unused-vars': [1], // 禁止出现未使用的变量
-    'no-use-before-define': [2], // 禁止在声明前使用变量
+    'no-use-before-define': [2, { functions: false, classes: false, variables: true, allowNamedExports: true }], // 禁止在声明前使用变量
     'no-useless-backreference': [2], // 禁止正则表达式中出现无用的反引
     'require-atomic-updates': [0], // 防止出现非原子化的更新
     'use-isnan': [2], // 必须使用isNaN来判断变量是否为NaN

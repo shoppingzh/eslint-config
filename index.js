@@ -83,7 +83,7 @@ module.exports = {
     'key-spacing': [2, { beforeColon: false, afterColon: true, mode: 'strict', }], // 对象键冒号前后的空格
     'keyword-spacing': [2, { before: true, after: true, }], // 关键字前后的空格
     'line-comment-position': [0], // 注释位置
-    'linebreak-style': [2, 'unix'], // 换行风格是unix还是windows
+    'linebreak-style': [0], // 换行风格是unix还是windows
     'lines-around-comment': [0], // 注释的周围是否要有空行
     'lines-between-class-members': [2, 'always'], // 类成员上下是否要有空行
     'max-len': [0], // 文件最大的行字符数

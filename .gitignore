@@ -1,5 +1,12 @@
 node_modules
 
-pnpm-lock.yaml
 yarn.lock
+yarn-error.log
 package-lock.json
+pnpm-lock.yaml
+
+# output
+dist
+coverage
+lib
+

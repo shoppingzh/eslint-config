@@ -1,6 +1,7 @@
 {
   "name": "@shoppingzh/eslint-config",
   "version": "3.0.0",
+  "type": "module",
   "description": "shoppingzh's eslint config",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
@@ -13,14 +14,13 @@
     "build": "rollup -c scripts/rollup.config.ts --configPlugin=typescript={tsconfig:'scripts/tsconfig.build.json'} --bundleConfigAsCjs --environment NODE_ENV:prod",
     "lint": "eslint .",
     "format": "eslint . --fix",
-    "test": "jest",
-    "test:cov": "jest --coverage",
     "prepare": "husky install"
   },
   "repository": "git@github.com:shoppingzh/eslint-config.git",
   "author": "shoppingzh <xpzheng6@163.com>",
   "license": "MIT",
   "devDependencies": {
+    "@antfu/eslint-config": "^2.8.2",
     "@atomico/rollup-plugin-sizes": "^1.1.4",
     "@babel/core": "^7.23.7",
     "@babel/plugin-transform-runtime": "^7.23.7",
@@ -29,6 +29,7 @@
     "@babel/runtime": "^7.23.7",
     "@commitlint/cli": "^17.8.1",
     "@commitlint/config-conventional": "^17.8.1",
+    "@eslint/js": "^8.57.0",
     "@rollup/plugin-alias": "^3.1.9",
     "@rollup/plugin-babel": "^5.3.1",
     "@rollup/plugin-beep": "^0.2.0",
@@ -38,6 +39,7 @@
     "@rollup/plugin-terser": "^0.4.4",
     "@rollup/plugin-typescript": "^8.5.0",
     "@shoppingzh/eslint-config": "^2.0.2",
+    "@stylistic/eslint-plugin": "^1.7.0",
     "@types/eslint": "^8.56.1",
     "@types/jest": "^28.1.8",
     "@types/node": "^18.19.4",
@@ -45,6 +47,7 @@
     "@typescript-eslint/parser": "^5.62.0",
     "dotenv": "^16.3.1",
     "eslint": "^8.56.0",
+    "globals": "^14.0.0",
     "husky": "^8.0.3",
     "jest": "^28.1.3",
     "lint-staged": "^13.3.0",
@@ -61,8 +64,5 @@
   },
   "peerDependencies": {
     "eslint": "^8.56.0"
-  },
-  "dependencies": {
-    "globals": "^14.0.0"
   }
 }

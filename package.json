@@ -14,13 +14,13 @@
     "build": "rollup -c scripts/rollup.config.ts --configPlugin=typescript={tsconfig:'scripts/tsconfig.build.json'} --bundleConfigAsCjs --environment NODE_ENV:prod",
     "lint": "eslint .",
     "format": "eslint . --fix",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "preview": "eslint-flat-config-viewer"
   },
   "repository": "git@github.com:shoppingzh/eslint-config.git",
   "author": "shoppingzh <xpzheng6@163.com>",
   "license": "MIT",
   "devDependencies": {
-    "@antfu/eslint-config": "^2.8.2",
     "@atomico/rollup-plugin-sizes": "^1.1.4",
     "@babel/core": "^7.23.7",
     "@babel/plugin-transform-runtime": "^7.23.7",
@@ -48,6 +48,7 @@
     "dotenv": "^16.3.1",
     "eslint": "^8.56.0",
     "eslint-flat-config-viewer": "^0.1.11",
+    "eslint-plugin-vue": "^9.23.0",
     "globals": "^14.0.0",
     "husky": "^8.0.3",
     "jest": "^28.1.3",
@@ -58,7 +59,9 @@
     "rollup-plugin-uglify": "^6.0.4",
     "ts-jest": "^28.0.8",
     "tslib": "^2.6.2",
-    "typescript": "^4.9.5"
+    "typescript": "^4.9.5",
+    "vue": "^3.4.21",
+    "vue-eslint-parser": "^9.4.2"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
@@ -66,7 +69,9 @@
   "peerDependencies": {
     "@typescript-eslint/eslint-plugin": ">=5.62.0",
     "@typescript-eslint/parser": ">=5.62.0",
-    "eslint": ">=8.40.0"
+    "eslint": ">=8.40.0",
+    "eslint-plugin-vue": "^9.23.0",
+    "vue-eslint-parser": "^9.4.2"
   },
   "peerDependenciesMeta": {
     "@typescript-eslint/eslint-plugin": {

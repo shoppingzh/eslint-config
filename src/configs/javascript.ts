@@ -1,6 +1,7 @@
 import { OverridesOptions, } from '@/utils/types'
 import { Linter, ESLint, } from 'eslint'
 import globals from 'globals'
+import { createNSRules, } from '@/utils/rule'
 
 interface Options extends OverridesOptions {
   globals?: ESLint.Globals
@@ -99,7 +100,7 @@ export function javascript(options: Options = {}): Linter.FlatConfig[] {
     },
     rules: {
       ...rules,
-      ...(options.overrides || {}),
+      ...createNSRules(options.overrides, null),
     },
   }]
 }

@@ -2,6 +2,7 @@ import { Linter, } from 'eslint'
 import plugin from '@typescript-eslint/eslint-plugin'
 import parser from '@typescript-eslint/parser'
 import { OverridesOptions, } from '@/utils/types'
+import { createNSRules, } from '@/utils/rule'
 
 interface Options extends OverridesOptions {
   files?: string[]
@@ -25,7 +26,7 @@ export function typescript(options: Options = {}): Linter.FlatConfig[] {
     files: options.files || DEFAULT_FILES,
     rules: {
       ...plugin.configs.recommended.rules,
-      ...(options.overrides || {}),
+      ...createNSRules(options.overrides, '@typescript-eslint'),
     },
   }]
 }

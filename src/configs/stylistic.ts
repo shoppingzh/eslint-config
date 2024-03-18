@@ -1,9 +1,11 @@
 import { OverridesOptions, } from '@/utils/types'
 import { Linter, } from 'eslint'
 import stylisticPlugin from '@stylistic/eslint-plugin'
+import { createNSRules, } from '@/utils/rule'
+
 
 interface Options extends OverridesOptions {
-
+  files?: string[]
 }
 
 const rules: Linter.RulesRecord = {
@@ -103,13 +105,13 @@ const rules: Linter.RulesRecord = {
 
 export function stylistic(options: Options = {}): Linter.FlatConfig[] {
   return [{
-    files: ['**/*'],
+    files: options.files || ['**/*'],
     plugins: {
       '@stylistic': stylisticPlugin as any,
     },
     rules: {
       ...rules,
-      ...(options.overrides || {}),
+      ...createNSRules(options.overrides, '@stylistic'),
     },
   }]
 }

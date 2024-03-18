@@ -1,4 +1,4 @@
-import { javascript, stylistic, typescript, } from './dist/index.js'
+import { javascript, stylistic, typescript, vue, } from './dist/index.js'
 
 /** @type {import('eslint').Linter.FlatConfig[]} */
 export default [
@@ -8,11 +8,18 @@ export default [
     ],
   },
   ...javascript(),
-  ...stylistic(),
+  ...stylistic({
+    overrides: {
+      'comma-dangle': [2, { arrays: 'ignore', functions: 'ignore', objects: 'always', imports: 'always', exports: 'ignore', }],
+    },
+  }),
   ...typescript({
     overrides: {
-      'ts/array-type': [2],
-      // 'ts/ban-types': [2],
+      'array-type': [2],
+      'ban-types': [2],
     },
+  }),
+  ...vue({
+    typescript: true,
   })
 ]

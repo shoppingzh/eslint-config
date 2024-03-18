@@ -1,7 +1,7 @@
 import path from 'path'
-import { defineConfig } from 'rollup'
+import { defineConfig, } from 'rollup'
 import alias from '@rollup/plugin-alias'
-import { babel } from '@rollup/plugin-babel'
+import { babel, } from '@rollup/plugin-babel'
 import commonjs from '@rollup/plugin-commonjs'
 import sizes from '@atomico/rollup-plugin-sizes'
 import ts from '@rollup/plugin-typescript'
@@ -11,7 +11,7 @@ import pkg from '../package.json'
 import clear from 'rollup-plugin-clear'
 import strip from '@rollup/plugin-strip'
 import replace from '@rollup/plugin-replace'
-import { dts } from 'rollup-plugin-dts'
+import { dts, } from 'rollup-plugin-dts'
 import config from './config'
 
 const input = 'src/index.ts'
@@ -19,8 +19,8 @@ const external = Object.keys(pkg.peerDependencies || {}).map(pkg => new RegExp(`
 const commonPlugins = [
   alias({
     entries: {
-      '@': path.resolve(__dirname, '../src')
-    }
+      '@': path.resolve(__dirname, '../src'),
+    },
   }),
   // 警告声
   beep(),
@@ -55,7 +55,7 @@ export default [
       }),
       // 去除console.log
       config.isProdMode && strip({
-        include: 'src/**/*.{ts,js}'
+        include: 'src/**/*.{ts,js}',
       }),
       // 替换环境变量
       replace({
@@ -64,8 +64,8 @@ export default [
           ...(Object.entries(config.env).reduce((all, [key, value]) => {
             all[`process.env.${key}`] = JSON.stringify(value)
             return all
-          }, {}))
-        }
+          }, {})),
+        },
       }),
 
       // 代码混淆
@@ -83,8 +83,8 @@ export default [
       dts({
         compilerOptions: {
           preserveSymlinks: false,
-        }
+        },
       })
-    ]
+    ],
   })
 ]

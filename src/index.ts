@@ -1,4 +1,6 @@
-import type { Linter } from 'eslint'
+import type { Linter, } from 'eslint'
+
+export * from './configs/typescript'
 
 interface ConfigItem {
   rules: Linter.RulesRecord
@@ -66,7 +68,7 @@ export const configs: Configs = {
       'no-unsafe-optional-chaining': [0], // 禁止出现不安全的可选链操作
       'no-unused-private-class-members': [1],
       'no-unused-vars': [1], // 禁止出现未使用的变量
-      'no-use-before-define': [2, { functions: false, classes: false, variables: true, allowNamedExports: true }], // 禁止在声明前使用变量
+      'no-use-before-define': [2, { functions: false, classes: false, variables: true, allowNamedExports: true, }], // 禁止在声明前使用变量
       'no-useless-backreference': [2], // 禁止正则表达式中出现无用的反引
       'require-atomic-updates': [0], // 防止出现非原子化的更新
       'use-isnan': [2], // 必须使用isNaN来判断变量是否为NaN
@@ -79,7 +81,7 @@ export const configs: Configs = {
       'camelcase': [0], // 驼峰风格还是下划线风格
       'capitalized-comments': [0], // 注释是否首字母大写
       'class-methods-use-this': [0],
-    }
+    },
   },
   stylistic: {
     rules: {
@@ -91,7 +93,7 @@ export const configs: Configs = {
       '@stylistic/block-spacing': [2], // 单行区块{}的空格
       '@stylistic/brace-style': [2], // 缩进风格
       '@stylistic/comma-dangle': [0], // 拖尾逗号
-      '@stylistic/comma-spacing': [2, { before: false, after: true }], // 逗号空格
+      '@stylistic/comma-spacing': [2, { before: false, after: true, }], // 逗号空格
       '@stylistic/comma-style': [2, 'last'], // 逗号风格：在前或在后
       '@stylistic/computed-property-spacing': [2, 'never'], // 对象的计算属性的空格，如a[ b ]
       '@stylistic/dot-location': [2, 'property'], // .的位置，在对象后还是在属性前
@@ -142,31 +144,31 @@ export const configs: Configs = {
       '@stylistic/no-mixed-operators': [0], // 
       '@stylistic/no-mixed-spaces-and-tabs': [2], // 不允许混用tab和空格
       '@stylistic/no-multi-spaces': [2], // 不允许多余的空格
-      '@stylistic/no-multiple-empty-lines': [2, { max: 2, maxEOF: 0 }], // 空行的最大数量
+      '@stylistic/no-multiple-empty-lines': [2, { max: 2, maxEOF: 0, }], // 空行的最大数量
       '@stylistic/no-tabs': [2], // 不允许使用tab
       '@stylistic/no-trailing-spaces': [2, { skipBlankLines: false, ignoreComments: true, }], // 不允许拖尾的空格
       '@stylistic/no-whitespace-before-property': [2], // 不允许属性前出现空格
-      '@stylistic/nonblock-statement-body-position': [2, 'beside', { overrides: {} }], // 非块状语句体（单行语句）的位置
-      '@stylistic/object-curly-newline': [2, { consistent: true }], // 对象大括号是否换行
+      '@stylistic/nonblock-statement-body-position': [2, 'beside', { overrides: {}, }], // 非块状语句体（单行语句）的位置
+      '@stylistic/object-curly-newline': [2, { consistent: true, }], // 对象大括号是否换行
       '@stylistic/object-curly-spacing': [2, 'always'], // 对象大括号前后的空格
       '@stylistic/object-property-newline': [0], // TODO 
       '@stylistic/one-var-declaration-per-line': [0], // 
       '@stylistic/operator-linebreak': [2, 'before'], // 换行时操作符的位置
-      '@stylistic/padded-blocks': [2, { classes: 'always' }], // 区块间是否有空行
+      '@stylistic/padded-blocks': [2, { classes: 'always', }], // 区块间是否有空行
       '@stylistic/padding-line-between-statements': [0], // 
       '@stylistic/quote-props': [0], // 
       '@stylistic/quotes': [2, 'single'], // 字符串是单引号还是双引号
       '@stylistic/rest-spread-spacing': [2, 'never'], // 剩余参数...后面是否需要空格
       '@stylistic/semi': [2, 'never'], // 语句末是否需要分号
-      '@stylistic/semi-spacing': [2, { before: false, after: false }], // 分号前后的空格
+      '@stylistic/semi-spacing': [2, { before: false, after: false, }], // 分号前后的空格
       '@stylistic/semi-style': [2, 'last'], // 分号风格，是在句末还是新行的行首
       '@stylistic/space-before-blocks': [2, 'always'], // 区块的{前是否需要空格
       '@stylistic/space-before-function-paren': [2, 'never'], // 函数声明括号前是否需要空格
       '@stylistic/space-in-parens': [1, 'never'], // 括号()前后是否需要空格，如func( 1, 2 )
       '@stylistic/space-infix-ops': [2], // 运算符前后的空格 
-      '@stylistic/space-unary-ops': [2, { words: true, nonwords: false, overrides: {} }], // 操作符前后的空格
+      '@stylistic/space-unary-ops': [2, { words: true, nonwords: false, overrides: {}, }], // 操作符前后的空格
       '@stylistic/spaced-comment': [0], // 
-      '@stylistic/switch-colon-spacing': [2, { before: false, after: true }], // case语句:前后的空格
+      '@stylistic/switch-colon-spacing': [2, { before: false, after: true, }], // case语句:前后的空格
       '@stylistic/template-curly-spacing': [0], // 字符串模板${}中{}前后的空格
       '@stylistic/template-tag-spacing': [1, 'never'], // 字符串模板标签后是否需要空格
       '@stylistic/type-annotation-spacing': [0], // 
@@ -174,7 +176,7 @@ export const configs: Configs = {
       '@stylistic/type-named-tuple-spacing': [0], // 
       '@stylistic/wrap-iife': [2, 'inside'], // iife的包裹风格
       '@stylistic/wrap-regex': [0], // 正则表达式字面量的包裹风格，是否需要空格包裹
-      '@stylistic/yield-star-spacing': [2, { before: true, after: false }], // yield中的*前后的空格
-    }
+      '@stylistic/yield-star-spacing': [2, { before: true, after: false, }], // yield中的*前后的空格
+    },
   },
 }

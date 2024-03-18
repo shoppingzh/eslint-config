@@ -1,10 +1,10 @@
 import { Linter, } from 'eslint'
 import plugin from '@typescript-eslint/eslint-plugin'
 import parser from '@typescript-eslint/parser'
+import { OverridesOptions, } from '@/utils/types'
 
-interface Options {
+interface Options extends OverridesOptions {
   files?: string[]
-  overrives?: Linter.RulesRecord
 }
 
 const DEFAULT_FILES = [
@@ -24,7 +24,7 @@ export function typescript(options: Options = {}): Linter.FlatConfig[] {
   }, {
     files: options.files || DEFAULT_FILES,
     rules: {
-      ...(options.overrives || {}),
+      ...(options.overrides || {}),
     },
   }]
 }

@@ -12,7 +12,7 @@ export default [
   ...typescript({
     overrides: {
       'ts/array-type': [2],
-      'ts/ban-types': [2],
+      // 'ts/ban-types': [2],
     },
   })
 ]

@@ -15,7 +15,7 @@ export function typescript(options: Options = {}): Linter.FlatConfig[] {
   return [{
     files: options.files || DEFAULT_FILES,
     plugins: {
-      ts: plugin as any,
+      '@typescript-eslint': plugin as any,
     },
     languageOptions: {
       parser: parser as any,
@@ -24,6 +24,7 @@ export function typescript(options: Options = {}): Linter.FlatConfig[] {
   }, {
     files: options.files || DEFAULT_FILES,
     rules: {
+      ...plugin.configs.recommended.rules,
       ...(options.overrides || {}),
     },
   }]

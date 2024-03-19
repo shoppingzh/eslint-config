@@ -10,10 +10,15 @@ export default [
   ...javascript(),
   ...stylistic({
     overrides: {
+      'jsx-indent': [2, 2],
       'comma-dangle': [2, { arrays: 'ignore', functions: 'ignore', objects: 'always', imports: 'always', exports: 'ignore', }],
     },
   }),
   ...typescript({
+    files: [
+      '**/*.?([cm])[jt]s?(x)',
+      '**/*.vue'
+    ],
     overrides: {
       'array-type': [2],
       'ban-types': [2],

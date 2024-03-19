@@ -93,6 +93,8 @@ export function javascript(options: Options = {}): Linter.FlatConfig[] {
         ecmaFeatures: {
           jsx: true,
         },
+        ecmaVersion: 'latest',
+        sourceType: 'module',
       },
     },
     linterOptions: {

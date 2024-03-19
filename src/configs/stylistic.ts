@@ -105,7 +105,7 @@ const rules: Linter.RulesRecord = {
 
 export function stylistic(options: Options = {}): Linter.FlatConfig[] {
   return [{
-    files: options.files || ['**/*'],
+    // files: options.files || ['**/*'],
     plugins: {
       '@stylistic': stylisticPlugin as any,
     },

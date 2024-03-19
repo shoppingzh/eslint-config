@@ -21,6 +21,13 @@ export function typescript(options: Options = {}): Linter.FlatConfig[] {
     languageOptions: {
       parser: parser as any,
       sourceType: 'module',
+      ecmaVersion: 'latest',
+      parserOptions: {
+        ecmaFeatures: {
+          jsx: true,
+        },
+        ecmaVersion: 'latest',
+      },
     },
   }, {
     files: options.files || DEFAULT_FILES,

@@ -15,7 +15,8 @@
     "lint": "eslint .",
     "format": "eslint . --fix",
     "prepare": "husky install",
-    "preview": "eslint-flat-config-viewer"
+    "preview": "eslint-flat-config-viewer",
+    "test": "eslint ./test"
   },
   "repository": "git@github.com:shoppingzh/eslint-config.git",
   "author": "shoppingzh <xpzheng6@163.com>",

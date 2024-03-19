@@ -19,19 +19,18 @@ export function vue(options: Options = {}): Linter.FlatConfig[] {
   const version = options.version || 3
   const rules = plugin.configs[version === 2 ? 'recommended' : 'vue3-recommended'].rules
   return [{
+    plugins: { vue: plugin, },
+  }, {
     files: options.files || DEFAULT_FILES,
-    plugins: {
-      vue: plugin,
-    },
     languageOptions: {
-      parser: parser,
+      parser: parser as any,
       parserOptions: {
         parser: options.typescript ? tsParser : null,
         extraFileExtensions: ['.vue'],
       },
       sourceType: 'module',
     },
-    processor: plugin.processors['.vue'],
+    processor: plugin.processors['.vue'], // 需要显式指定processor
     rules: {
       ...rules,
       ...createNSRules(options.overrides, 'vue'),

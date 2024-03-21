@@ -1,4 +1,4 @@
-import { Linter, } from 'eslint'
+import { ESLint, Linter, } from 'eslint'
 import plugin from '@typescript-eslint/eslint-plugin'
 import parser from '@typescript-eslint/parser'
 import { OverridesOptions, } from '@/utils/types'
@@ -16,7 +16,7 @@ export function typescript(options: Options = {}): Linter.FlatConfig[] {
   return [{
     files: options.files || DEFAULT_FILES,
     plugins: {
-      '@typescript-eslint': plugin as any,
+      '@typescript-eslint': plugin as unknown as ESLint.Plugin,
     },
     languageOptions: {
       parser: parser as any,

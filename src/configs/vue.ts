@@ -17,7 +17,11 @@ const DEFAULT_FILES = ['**/*.vue']
 
 export function vue(options: Options = {}): Linter.FlatConfig[] {
   const version = options.version || 3
-  const rules = plugin.configs[version === 2 ? 'recommended' : 'vue3-recommended'].rules
+  const rules = {
+    ...plugin.configs['base'].rules,
+    ...plugin.configs[version === 2 ? 'essential' : 'vue3-essential'].rules,
+    ...plugin.configs[version === 2 ? 'recommended' : 'vue3-recommended'].rules,
+  }
   return [{
     plugins: { vue: plugin, },
   }, {

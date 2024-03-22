@@ -1,5 +1,11 @@
-import { Linter } from 'eslint'
+import { Linter, } from 'eslint'
 
+/**
+ * 为规则列表新增插件名称空间
+ * @param rules 
+ * @param namespace 
+ * @returns 
+ */
 export function createNSRules(rules: Linter.RulesRecord, namespace: string): Linter.RulesRecord {
   if (!rules) return {}
 

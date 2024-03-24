@@ -16,7 +16,8 @@
     "format": "eslint . --fix",
     "prepare": "husky install",
     "preview": "eslint-flat-config-viewer",
-    "test": "eslint ./test"
+    "test": "eslint ./test",
+    "push": "pnpm build && npm publish"
   },
   "repository": "git@github.com:shoppingzh/eslint-config.git",
   "author": "shoppingzh <xpzheng6@163.com>",
@@ -68,17 +69,31 @@
     "registry": "https://registry.npmjs.org"
   },
   "peerDependencies": {
+    "@stylistic/eslint-plugin": "^1.7.0",
     "@typescript-eslint/eslint-plugin": ">=5.62.0",
     "@typescript-eslint/parser": ">=5.62.0",
     "eslint": ">=8.40.0",
     "eslint-plugin-vue": "^9.23.0",
+    "globals": "^14.0.0",
     "vue-eslint-parser": "^9.4.2"
   },
   "peerDependenciesMeta": {
+    "@stylistic/eslint-plugin": {
+      "optional": true
+    },
     "@typescript-eslint/eslint-plugin": {
       "optional": true
     },
     "@typescript-eslint/parser": {
+      "optional": true
+    },
+    "eslint-plugin-vue": {
+      "optional": true
+    },
+    "globals": {
+      "optional": true
+    },
+    "vue-eslint-parser": {
       "optional": true
     }
   }

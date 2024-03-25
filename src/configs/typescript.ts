@@ -12,7 +12,7 @@ const DEFAULT_FILES = [
   '**/*.?([cm])[jt]s?(x)'
 ]
 
-export function typescript(options: Options = {}): Linter.FlatConfig[] {
+export default function typescript(options: Options = {}): Linter.FlatConfig[] {
   return [{
     files: options.files || DEFAULT_FILES,
     plugins: {

@@ -76,7 +76,7 @@ const rules: Linter.RulesRecord = {
   'class-methods-use-this': [0],
 }
 
-export function javascript(options: Options = {}): Linter.FlatConfig[] {
+export default function javascript(options: Options = {}): Linter.FlatConfig[] {
   return [{
     languageOptions: {
       ecmaVersion: 'latest',

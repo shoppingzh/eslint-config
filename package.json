@@ -3,12 +3,36 @@
   "version": "3.0.0",
   "type": "module",
   "description": "shoppingzh's eslint config",
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "types": "./dist/index.d.ts"
+    },
+    "./javascript": {
+      "import": "./dist/javascript.js",
+      "require": "./dist/javascript.cjs",
+      "types": "./dist/javascript.d.ts"
+    },
+    "./stylistic": {
+      "import": "./dist/stylistic.js",
+      "require": "./dist/stylistic.cjs",
+      "types": "./dist/stylistic.d.ts"
+    },
+    "./typescript": {
+      "import": "./dist/typescript.js",
+      "require": "./dist/typescript.cjs",
+      "types": "./dist/typescript.d.ts"
+    },
+    "./vue": {
+      "import": "./dist/vue.js",
+      "require": "./dist/vue.cjs",
+      "types": "./dist/vue.d.ts"
+    }
+  },
   "scripts": {
     "dev": "rollup -c scripts/rollup.config.ts --configPlugin=typescript={tsconfig:'scripts/tsconfig.build.json'} --bundleConfigAsCjs --watch --environment NODE_ENV:dev",
     "build": "rollup -c scripts/rollup.config.ts --configPlugin=typescript={tsconfig:'scripts/tsconfig.build.json'} --bundleConfigAsCjs --environment NODE_ENV:prod",
@@ -51,6 +75,7 @@
     "eslint": "^8.56.0",
     "eslint-flat-config-viewer": "^0.1.11",
     "eslint-plugin-vue": "^9.23.0",
+    "glob": "^10.3.10",
     "globals": "^14.0.0",
     "husky": "^8.0.3",
     "jest": "^28.1.3",

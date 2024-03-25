@@ -15,7 +15,7 @@ interface Options extends OverridesOptions {
 
 const DEFAULT_FILES = ['**/*.vue']
 
-export function vue(options: Options = {}): Linter.FlatConfig[] {
+export default function vue(options: Options = {}): Linter.FlatConfig[] {
   const version = options.version || 3
   const rules = {
     ...plugin.configs['base'].rules,

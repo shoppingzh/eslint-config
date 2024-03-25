@@ -13,8 +13,16 @@ import strip from '@rollup/plugin-strip'
 import replace from '@rollup/plugin-replace'
 import { dts, } from 'rollup-plugin-dts'
 import config from './config'
+import { globSync, } from 'glob'
 
-const input = 'src/index.ts'
+const input = globSync(['src/configs/*.ts', 'src/index.ts'], {
+  cwd: path.resolve(__dirname, '..'),
+  withFileTypes: true,
+}).reduce((input, o) => {
+  input[o.name.replace(/\.[jt]s$/g, '')] = path.resolve(__dirname, o.path, o.name)
+  return input
+}, {} as Record<string, string>)
+
 const external = Object.keys(pkg.peerDependencies || {}).map(pkg => new RegExp(`^${pkg}`))
 const commonPlugins = [
   alias({

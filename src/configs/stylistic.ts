@@ -103,7 +103,7 @@ const rules: Linter.RulesRecord = {
   '@stylistic/yield-star-spacing': [2, { before: true, after: false, }], // yield中的*前后的空格
 }
 
-export function stylistic(options: Options = {}): Linter.FlatConfig[] {
+export default function stylistic(options: Options = {}): Linter.FlatConfig[] {
   return [{
     plugins: {
       '@stylistic': plugin as ESLint.Plugin,

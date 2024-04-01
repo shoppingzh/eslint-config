@@ -16,5 +16,11 @@ const obj = {
   b: '2'
 }
 
-const view = (<div class='123'></div>)
+const view = (
+  <div
+    class='123'
+      aaa:bbb={val => console.log(val)}>
+      <p>hello</p>
+  </div>
+)
 </script>

@@ -42,11 +42,11 @@ export default [
     output: [{
       dir: 'dist',
       format: 'esm',
-      entryFileNames: '[name].js',
+      entryFileNames: '[name].esm.js',
     }, {
       dir: 'dist',
       format: 'cjs',
-      entryFileNames: '[name].cjs',
+      entryFileNames: '[name].cjs.js',
     }],
     external,
     plugins: [

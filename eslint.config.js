@@ -1,7 +1,7 @@
-import { javascript, stylistic, typescript, vue, } from './dist/index.js'
+const { javascript, stylistic, typescript, vue, } = require('./dist/index.cjs.js')
 
 /** @type {import('eslint').Linter.FlatConfig[]} */
-export default [
+module.exports = [
   {
     ignores: [
       'dist/**'
@@ -10,6 +10,7 @@ export default [
   ...javascript(),
   ...stylistic({
     overrides: {
+      'indent': [0],
       'jsx-indent': [2, 2],
       'comma-dangle': [2, { arrays: 'ignore', functions: 'ignore', objects: 'always', imports: 'always', exports: 'ignore', }],
     },

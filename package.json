@@ -2,37 +2,39 @@
   "name": "@shoppingzh/eslint-config",
   "version": "3.0.2",
   "description": "shoppingzh's eslint config",
+  "type": "module",
   "files": [
     "dist"
   ],
   "exports": {
     ".": {
-      "import": "./dist/index.esm.js",
-      "require": "./dist/index.cjs.js",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
       "types": "./dist/index.d.ts"
     },
     "./javascript": {
-      "import": "./dist/javascript.esm.js",
-      "require": "./dist/javascript.cjs.js",
+      "import": "./dist/javascript.js",
+      "require": "./dist/javascript.cjs",
       "types": "./dist/javascript.d.ts"
     },
     "./stylistic": {
-      "import": "./dist/stylistic.esm.js",
-      "require": "./dist/stylistic.cjs.js",
+      "import": "./dist/stylistic.js",
+      "require": "./dist/stylistic.cjs",
       "types": "./dist/stylistic.d.ts"
     },
     "./typescript": {
-      "import": "./dist/typescript.esm.js",
-      "require": "./dist/typescript.cjs.js",
+      "import": "./dist/typescript.js",
+      "require": "./dist/typescript.cjs",
       "types": "./dist/typescript.d.ts"
     },
     "./vue": {
-      "import": "./dist/vue.esm.js",
-      "require": "./dist/vue.cjs.js",
+      "import": "./dist/vue.js",
+      "require": "./dist/vue.cjs",
       "types": "./dist/vue.d.ts"
     },
     "./dist/*": "./dist/*",
-    "./package.json": "./package.json"
+    "./package.json": "./package.json",
+    "./*": "./*"
   },
   "scripts": {
     "dev": "rollup -c scripts/rollup.config.ts --configPlugin=typescript={tsconfig:'scripts/tsconfig.build.json'} --bundleConfigAsCjs --watch --environment NODE_ENV:dev",

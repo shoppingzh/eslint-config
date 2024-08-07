@@ -1,6 +1,6 @@
 {
   "name": "@shoppingzh/eslint-config",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "description": "shoppingzh's eslint config",
   "type": "module",
   "files": [

@@ -4,8 +4,13 @@
 ## 安装
 
 ```
+# pnpm
 pnpm i -D @shoppingzh/eslint-config
+
+# yarn
 yarn add -D @shoppingzh/eslint-config
+
+# npm
 npm i -D @shoppingzh/eslint-config
 ```
 

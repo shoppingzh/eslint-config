@@ -1,5 +1,5 @@
 import { OverridesOptions, } from '@/utils/types'
-import { ESLint, Linter, } from 'eslint'
+import { Linter, } from 'eslint'
 import plugin from '@stylistic/eslint-plugin'
 import { createNSRules, } from '@/utils/rule'
 
@@ -106,7 +106,7 @@ const rules: Linter.RulesRecord = {
 export default function stylistic(options: Options = {}): Linter.FlatConfig[] {
   return [{
     plugins: {
-      '@stylistic': plugin as ESLint.Plugin,
+      '@stylistic': plugin as unknown,
     },
     rules: {
       ...rules,

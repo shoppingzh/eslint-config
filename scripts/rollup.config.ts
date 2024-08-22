@@ -79,7 +79,7 @@ export default [
       }),
 
       // 代码混淆
-      config.isProdMode && terser(),
+      // config.isProdMode && terser(),
     ],
   }),
   defineConfig({

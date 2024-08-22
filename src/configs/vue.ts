@@ -1,11 +1,12 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { OverridesOptions, } from '@/utils/types'
 import { Linter, } from 'eslint'
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-//@ts-ignore
+// @ts-ignore
 import plugin from 'eslint-plugin-vue'
 import parser from 'vue-eslint-parser'
 import { createNSRules, } from '@/utils/rule'
-import tsParser from '@typescript-eslint/parser'
+// @ts-ignore
+import * as tsParser from '@typescript-eslint/parser'
 
 interface Options extends OverridesOptions {
   files?: string[]
@@ -27,7 +28,7 @@ export default function vue(options: Options = {}): Linter.FlatConfig[] {
   }, {
     files: options.files || DEFAULT_FILES,
     languageOptions: {
-      parser: parser as any,
+      parser: parser,
       parserOptions: {
         parser: options.typescript ? tsParser : null,
         extraFileExtensions: ['.vue'],

@@ -22,7 +22,7 @@ export default [
     ],
     overrides: {
       'array-type': [2],
-      'ban-types': [2],
+      // 'ban-types': [2], // 8.2.0版本移除了这个规则
     },
   }),
   ...vue({

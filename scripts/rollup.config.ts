@@ -15,7 +15,7 @@ import { dts, } from 'rollup-plugin-dts'
 import config from './config'
 import { globSync, } from 'glob'
 
-const input = globSync(['src/configs/*.ts', 'src/index.ts'], {
+const input = globSync(['src/index.ts'], {
   cwd: path.resolve(__dirname, '..'),
   withFileTypes: true,
 }).reduce((input, o) => {

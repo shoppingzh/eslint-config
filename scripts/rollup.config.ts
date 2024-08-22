@@ -6,7 +6,7 @@ import commonjs from '@rollup/plugin-commonjs'
 import sizes from '@atomico/rollup-plugin-sizes'
 import ts from '@rollup/plugin-typescript'
 import beep from '@rollup/plugin-beep'
-import terser from '@rollup/plugin-terser'
+// import terser from '@rollup/plugin-terser'
 import pkg from '../package.json'
 import clear from 'rollup-plugin-clear'
 import strip from '@rollup/plugin-strip'
@@ -23,7 +23,10 @@ const input = globSync(['src/index.ts'], {
   return input
 }, {} as Record<string, string>)
 
-const external = Object.keys(pkg.peerDependencies || {}).map(pkg => new RegExp(`^${pkg}`))
+const external = Object.keys({
+  ...pkg.dependencies,
+  ...pkg.peerDependencies,
+}).map(pkg => new RegExp(`^${pkg}`))
 const commonPlugins = [
   alias({
     entries: {
